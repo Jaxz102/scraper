@@ -18,7 +18,7 @@ app.get('/instagram/user/:userId', async (req, res) => {
   // You can extend this to actually fetch Instagram data
   const instagramData = await getInstagramAccount(userId);
 
-  res.json(instagramData);
+  res.json(instagramData.data.user);
   
 });
 

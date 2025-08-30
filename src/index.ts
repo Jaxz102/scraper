@@ -1,4 +1,6 @@
 import { chromium } from 'playwright';
+import type { InstagramAccount } from './data.types.js';
+
 
 
 export async function getInstagramAccount(userid: string) {
@@ -13,7 +15,7 @@ export async function getInstagramAccount(userid: string) {
             
             if (url === "https://www.instagram.com/graphql/query" && status === 200) {
                 try {
-                    const responseBody = await response.json();
+                    const responseBody: InstagramAccount = await response.json();
                     const formattedJson = JSON.stringify(responseBody, null, 2);
                     const lineCount = formattedJson.split('\n').length;
                     if(lineCount > 50){
@@ -32,7 +34,7 @@ export async function getInstagramAccount(userid: string) {
     
     context.close().then(() => {browser.close()});
 
-    const res = await igPromise;
+    const res = await igPromise as InstagramAccount;
 
     return res
 
