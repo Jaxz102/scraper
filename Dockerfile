@@ -66,10 +66,10 @@ RUN chown -R nodejs:nodejs /app
 USER nodejs
 
 # Expose port
-EXPOSE 3000
+EXPOSE 8080
 
 # Set environment variable for port
-ENV PORT=3000
+ENV PORT=8080
 
 # Start the application
 CMD ["npm", "start"]
