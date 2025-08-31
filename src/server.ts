@@ -2,7 +2,7 @@ import express from 'express';
 import {getInstagramAccount} from './index.js'
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 // Middleware to parse JSON bodies
 app.use(express.json());
@@ -27,7 +27,7 @@ app.get('/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() });
 });
 
-// Start the server
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
   console.log(`Instagram user endpoint: http://localhost:${PORT}/instagram/user/:userId`);
