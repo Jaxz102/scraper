@@ -4,7 +4,7 @@ import type { InstagramAccount } from './data.types.js';
 
 
 export async function getInstagramAccount(userid: string) {
-    const browser = await chromium.launch();  
+    const browser = await chromium.launch({ headless: true });  
     const context = await browser.newContext();
     const page = await context.newPage();
    
