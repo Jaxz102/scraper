@@ -2,16 +2,18 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/server.js",
-    "dev": "ts-node src/server.ts"
+    "dev": "ts-node src/server.ts",
+    "postinstall": "npx playwright install --with-deps"
   },
   "devDependencies": {
-    "@playwright/test": "^1.55.0",
+    "@types/express": "^5.0.3",
     "@types/node": "^24.3.0",
     "typescript": "^5.9.2"
   },
   "type": "module",
   "dependencies": {
-    "@types/express": "^5.0.3",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "@playwright/test": "^1.55.0",
+    "playwright": "^1.55.0"
   }
 }
