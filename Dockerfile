@@ -13,12 +13,6 @@ COPY . .
 # Build the TypeScript application
 RUN npm run build
 
-# Change ownership of the app directory
-RUN chown -R nodejs:nodejs /app
-
-# Switch to non-root user
-USER nodejs
-
 # Expose port
 EXPOSE 8080
 
